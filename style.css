@@ -1,13 +1,15 @@
 body {
   margin: 0px;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 
 header {
   background: rgb(255, 255, 255);
   background: linear-gradient(
-    173deg,
-    rgba(51, 194, 99, 0.63) 15%,
-    rgba(255, 255, 255, 1) 50%
+    290deg,
+    rgb(255, 197, 255) 20%,
+    rgba(255, 255, 255, 1) 75%
   );
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -15,26 +17,67 @@ header {
 
 header > .main-pic {
   margin: 30px;
+  margin-right: 0px;
   justify-self: end;
+  position: relative;
+  text-align: center;
 }
+
+.main-pic > h3 {
+  font-family: ;
+  position: absolute;
+  color: white;
+  font-size: 45px;
+  letter-spacing: 10px;
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.568);
+  padding: 10px;
+  width: 70%;
+}
+
+.main-pic > h3:hover {
+  background-color: white;
+  color: rgb(255, 197, 255);
+  text-shadow: 2px 2px black;
+  cursor:pointer;
+}
+
 header > .about-me {
-  border-top: 1px solid black;
-  justify-self: start;
+  background-color: rgba(128, 128, 128, 0.11);
+  margin-right: 20px;
   align-self: center;
   font-size: 32px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+.about-me > h2 {
+  letter-spacing: -5px;
+  word-spacing: 10px;
+  text-align: center;
 }
 
 header > .main-pic > img {
   max-width: 640px;
-  box-shadow: -0.2em 0.2em 0.4em black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 main {
+  background: linear-gradient(
+    200deg,
+    rgb(255, 197, 255) 20%,
+    rgba(255, 255, 255, 1) 75%
+  );
   display: grid;
 }
 
 main > h2 {
-  place-self: center;
+  text-align: center;
+  font-size: 30px;
 }
 
 main > .projects-list {
@@ -47,10 +90,17 @@ main > .projects-list {
 }
 
 .projects-list > .project {
-  background-color:rgba(175, 238, 238, 0.363);
+  background-color: white;
   padding: 10px;
-  border: 1px solid black;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
   font-size: 18px;
+  border-radius: 5px;
+}
+
+.project:hover {
+  background-color: rgb(255, 197, 255);
+  opacity: 0.75;
 }
 
 .project > img {
@@ -58,16 +108,35 @@ main > .projects-list {
 }
 
 footer {
-  background: rgb(61, 247, 123, 0.63);
-  background: linear-gradient(
-    173deg,
-    rgba(255, 255, 255, 1) 5%,
-    rgba(51, 194, 99, 0.63) 95%
-  );
+  background-color: white;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 footer > .contacts {
   place-self: center;
+}
+
+@media screen and (min-width: 550px) and (max-width: 1000px) {
+  header > .main-pic > img {
+    max-width: 480px;
+  }
+
+  main > .projects-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  header > .about-me {
+    align-self: start;
+  }
+
+  .about-me > p {
+    font-size: 28px;
+  }
+}
+
+@media screen and (max-width: 549px) {
+  body {
+    display: none;
+  }
 }
