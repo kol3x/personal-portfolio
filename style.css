@@ -24,7 +24,6 @@ header > .main-pic {
 }
 
 .main-pic > h3 {
-  font-family: ;
   position: absolute;
   color: white;
   font-size: 45px;
@@ -41,14 +40,14 @@ header > .main-pic {
   background-color: white;
   color: rgb(255, 197, 255);
   text-shadow: 2px 2px black;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 header > .about-me {
   background-color: rgba(128, 128, 128, 0.11);
   margin-right: 20px;
   align-self: center;
-  font-size: 32px;
+  font-size: 2em;
   padding: 20px;
   box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
     rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
@@ -117,9 +116,9 @@ footer > .contacts {
   place-self: center;
 }
 
-@media screen and (min-width: 550px) and (max-width: 1000px) {
+@media screen and (min-width: 750px) and (max-width: 1250px) {
   header > .main-pic > img {
-    max-width: 480px;
+    max-width: 400px;
   }
 
   main > .projects-list {
@@ -131,12 +130,37 @@ footer > .contacts {
   }
 
   .about-me > p {
-    font-size: 28px;
+    font-size: 24px;
   }
 }
 
-@media screen and (max-width: 549px) {
-  body {
-    display: none;
+@media screen and (max-width: 749px) {
+  header {
+    grid-template-columns: 1fr;
+  }
+
+  header > .about-me {
+    margin: 0px;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 7px 13px -3px;
+  }
+
+  .about-me > h2 {
+    margin: 0px;
+  }
+
+  header > .main-pic {
+    place-self: center;
+    margin: 0px;
+  }
+  header > .main-pic > img {
+    max-width: 320px;
+  }
+
+  main > .projects-list {
+    grid-template-columns: 1fr;
+  }
+
+  .about-me > p {
+    font-size: 20px;
   }
 }
